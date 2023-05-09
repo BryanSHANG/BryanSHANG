@@ -1,0 +1,12 @@
+     HOW TO CREATE A SIMPLE WEBPAGE USING GITHUB
+
+Step 1; Start by getting a free Github account. Sign up 
+Step 2: When you're logged in click on the your profile picture, select the green book icon and create a new repository. Name your new repository
+
+Step 3: Select the option to add files to your repository, add your HTML file, and your picture (preferably .jpeg).
+
+
+
+
+Step 4: Be sure to commit your additions and congratulations you have just created your first repository and webpage using HTML.
+Be sure to share it with your friends on Twitter and LinkedIn
