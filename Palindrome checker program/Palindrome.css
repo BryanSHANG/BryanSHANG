@@ -1,0 +1,16 @@
+﻿body
+{
+    font-family:'Times New Roman', Times, serif;
+    color:rgba(23, 40, 50, 0.4);
+}
+
+button
+{
+    color:red;
+    background-color:bisque;
+    border:groove;
+    border-radius:30px 30px 30px 30px;
+    resize:block;
+    height:60px;
+    width:90px;
+}
