@@ -1,0 +1,35 @@
+﻿html { background-color:aliceblue;
+}
+
+body {
+    background-color: green;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding:0 20px 20px 20px;
+    border: 10px solid white;
+    margin: 0 auto;
+
+
+
+}
+h1 { font-size:50px;
+     color:navajowhite;
+     border:double;
+     text-align:center;
+     background-color:blue;
+}
+ p {
+    /*text-align: center;*/
+    color: navajowhite;
+}
+
+
+
+table, td, th {
+    border: 1px solid blue;
+    border-collapse: collapse;
+    border-color: black;
+    border-style: groove;
+    text-align:center;
+    background-color: orange;
+   /**background-color:red**/
+}
