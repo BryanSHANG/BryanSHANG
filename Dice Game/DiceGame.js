@@ -21,8 +21,8 @@ const rulesContainer = document.querySelector(".rules-container"); // Rules popu
 const rulesBtn = document.getElementById("rules-btn"); // Toggle rules button
 
 
-let diceValuesArr = []; // Stores current dice values (e.g., [1, 3, 5, 2, 4])
-let isModalShowing = false; // Tracks if rules are visible
+let diceValuesArr = []; // This is meant to store current dice values (e.g., [1, 3, 5, 2, 4])
+let isModalShowing = false; // Keeps track if rules are visible
 let score = 0; // Total game score
 let round = 1; // Current round (1-6)
 let rolls = 0; // Rolls left in round (0-3)
@@ -33,7 +33,7 @@ const rollDice = () => {
     const randomDice = Math.floor(Math.random() * 6) + 1; // Random num 1-6
     diceValuesArr.push(randomDice); // Add to array
   }
-  // Update UI to show dice faces
+  // Updates UI to show die faces
   listOfAllDice.forEach((dice, index) => {
     dice.textContent = diceValuesArr[index];
   });
@@ -59,7 +59,7 @@ const updateScore = (selectedValue, achieved) => {
 
 
 const getHighestDuplicates = (arr) => {
-    const counts = {}; // Track dice frequencies (e.g., {1:2, 3:3})
+    const counts = {}; // Track die frequencies (e.g., {1:2, 3:3})
   for (const num of arr) {
     counts[num] = counts[num] ? counts[num] + 1 : 1; // Increment count
   }
@@ -68,7 +68,7 @@ const getHighestDuplicates = (arr) => {
     const count = counts[num];
     if (count >= 3 && count > highestCount) highestCount = count; // Track max duplicates
   }
-  const sumOfAllDice = arr.reduce((a, b) => a + b, 0); // Sum all dice
+  const sumOfAllDice = arr.reduce((a, b) => a + b, 0); // Sum all die
   
   if (highestCount >= 4) updateRadioOption(1, sumOfAllDice); // 4-of-a-kind
   
@@ -98,9 +98,9 @@ const checkForStraights = (arr) => {
   
   const uniqueNumbersStr = uniqueNumbersArr.join(""); // Convert to string (e.g., "1234")
   
-  const smallStraightsArr = ["1234", "2345", "3456"]; // Possible small straights
+  const smallStraightsArr = ["1234", "2345", "3456"]; // List of possible small straights
   
-  const largeStraightsArr = ["12345", "23456"]; // Possible large straights
+  const largeStraightsArr = ["12345", "23456"]; // List of possible large straights
   
   if (smallStraightsArr.some(straight => uniqueNumbersStr.includes(straight))) {
     updateRadioOption(3, 30); // Small straight = 30 pts
@@ -145,12 +145,12 @@ const resetGame = () => {
 
 rollDiceBtn.addEventListener("click", () => {
   if (rolls === 3) {
-    alert("You’ve used all rolls. Select a score!"); // Enforce rules
+    alert("You’ve used all rolls. Select a score!"); // Remidner text to enforce rules
   } else {
     rolls++; // Increment roll count
     resetRadioOptions(); // Clear old options
     rollDice(); // Generate new dice
-    updateStats(); // Update round/rolls display
+    updateStats(); // Update round AND rolls display
     // Check for scoring opportunities:
     getHighestDuplicates(diceValuesArr);
     detectFullHouse(diceValuesArr);
@@ -173,7 +173,7 @@ rulesBtn.addEventListener("click", () => {
 
 keepScoreBtn.addEventListener("click", () => {
   let selectedValue, achieved;
-  // Find which radio button is selected:
+  // Finds which radio button is selected:
   for (const radioButton of scoreInputs) {
     if (radioButton.checked) {
       selectedValue = radioButton.value;
